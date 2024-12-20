@@ -1,4 +1,21 @@
-<div th:fragment="parent">
-    <h1>this is use case</h1>
-    <h1>this is secoubnd use case</h1>
+<!doctype html>
+<html class="dark" lang="en" th:fragment="parent(content,title,script)" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title data-th-replace="${title}">Base Page</title>
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+<body class="dark:bg-grey-900 dark:text:text-white">
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+
+<div th:replace="navbar :: navbar"></div>
+<div>
+    <section data-th-replace="${content}"></section>
 </div>
+
+<script data-th-replace="${script}"></script>
+<th:block data-th-replace="${script}"></th:block>
+</body>
+</html>

@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class HomeController {
+public class PageController {
 
     @RequestMapping("/home")
     public String home(Model model) {
@@ -29,4 +29,27 @@ public class HomeController {
         System.out.println("this is service");
         return "services";
     }
+
+    @RequestMapping("/contact")
+    public String contactPage(Model model) {
+        System.out.println("this is service");
+        model.addAttribute("contact");
+        return "contact";
+    }
+
+    @RequestMapping("/login")
+    public String loginPage(Model model) {
+        System.out.println("this is service");
+        model.addAttribute("login");
+        return "login";
+    }
+
+    @RequestMapping("/register")
+    public String registerPage(Model model) {
+        System.out.println("this is service");
+        model.addAttribute("register");
+        return "register";
+    }
+
+
 }

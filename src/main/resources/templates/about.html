@@ -1,11 +1,17 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" th:replace="~{base::parent(~{::#content},~{::script},~{})}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>This is the about page</title>
+    <title>About Page</title>
 </head>
 <body>
- <h1>This is the about page</h1>
+ <section id="content">
+     <h1>About Us</h1>
+     <p>Welcome to our website! This is the about page. Here, you can find information about our company, mission, and vision.</p>
+ </section>
+ <script>
+     console.log("this is about script")
+ </script>
 </body>
 </html>
