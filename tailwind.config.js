@@ -6,6 +6,6 @@ module.exports = {
   },
   plugins: [],
 
-  darkMode:"selecter",
+  darkMode:"selector",
 }
 
