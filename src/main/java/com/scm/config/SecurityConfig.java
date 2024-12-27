@@ -43,8 +43,8 @@ public class SecurityConfig {
     @Autowired
     private SecurityCustomUserDetailService userDetailService;
 
-//    @Autowired
-//    private OAuthAuthenicationSuccessHandler handler;
+    @Autowired
+    private OAuthAuthenicationSuccessHandler handler;
 
 //    @Autowired
 //    private AuthFailtureHandler authFailtureHandler;
@@ -122,12 +122,12 @@ public class SecurityConfig {
         });
 
         httpSecurity.csrf(AbstractHttpConfigurer::disable);
-        // oauth configurations
 
-//    A    httpSecurity.oauth2Login(oauth -> {
-//            oauth.loginPage("/login");
-//            oauth.successHandler(handler);
-//        });
+         //oauth configurations
+        httpSecurity.oauth2Login(oauth -> {
+            oauth.loginPage("/login");
+            oauth.successHandler(handler);
+        });
 
         httpSecurity.logout(logoutForm -> {
             logoutForm.logoutUrl("/do-logout");

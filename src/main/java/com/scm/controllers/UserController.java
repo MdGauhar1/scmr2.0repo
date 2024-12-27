@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/user")
 public class UserController {
 
+
     private Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @Autowired
@@ -32,16 +33,6 @@ public class UserController {
 
     @RequestMapping(value = "/profile")
     public String userProfile(Model model, Authentication authentication) {
-        String user = authentication.getName();
-
-         //Get additional user details from your User entity (if needed)
-        User userName = (User) authentication.getPrincipal(); // assuming you're using a custom UserDetailsService
-
-        // Add the user details to the model
-        model.addAttribute("username", userName.getName()); // if you want to display their full name
-
-         //Display welcome message with username
-        System.out.println("Welcome"+ userName.getName()); // or use the username/email
 
         return "user/profile";
     }

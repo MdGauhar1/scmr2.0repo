@@ -90,4 +90,9 @@ public class UserServiceImpl implements UserService {
     public List<User> getAllUser() {
         return userRepo.findAll();
     }
+
+    @Override
+    public User getUserByEmail(String email) {
+        return userRepo.findByEmail(email).orElseThrow(() -> new ResourceNotFoundException("User not found with id: "));
+    }
 }
